@@ -1,0 +1,25 @@
+name: Sincronização Automática
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do Repositório
+        uses: actions/checkout@v2
+
+      - name: Configuração do Git
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+
+      - name: Sincronizar com o Repositório Original
+        run: |
+          git fetch upstream
+          git checkout main
+          git merge upstream/main --no-edit
+          git push origin main

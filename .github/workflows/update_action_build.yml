@@ -14,7 +14,7 @@ jobs:
 
       - name: Configuração do Git
         run: |
-          git config --local user.email "actions@github.com"
+          git config --local user.email "tpchagas@terra.com.br"
           git config --local user.name "GitHub Actions"
 
       - name: Adicionar Repositório Remoto 'upstream'

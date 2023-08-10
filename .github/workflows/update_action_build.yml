@@ -17,12 +17,9 @@ jobs:
           git config --local user.email "tpchagas@terra.com.br"
           git config --local user.name "GitHub Actions"
 
-      - name: Adicionar Repositório Remoto 'upstream'
-        run: git remote add upstream https://github.com/pedroslopez/whatsapp-web.js.git
-
       - name: Sincronizar com o Repositório Original
         run: |
-          git fetch upstream
+          git fetch origin
           git checkout main
-          git merge upstream/main --no-edit
+          git pull origin main --no-edit
           git push origin main

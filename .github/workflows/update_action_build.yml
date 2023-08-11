@@ -1,8 +1,7 @@
 name: Sincronização Automática 6 horas
 
 on:
-  schedule:
-    - cron: "0 */6 * * *"
+
 
 jobs:
   sync:
